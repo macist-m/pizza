@@ -23,6 +23,7 @@ class LoginTest extends TestCase
     {
         $user = factory(User::class)->make();
         $response = $this->actingAs($user)->get('/login');
+        
         $response->assertRedirect('/home');
     }
 
